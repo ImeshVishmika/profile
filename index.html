@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Imesh Vishmika - Software Engineering Student Portfolio">
     <title>Portfolio // MOST WANTED</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
@@ -1319,12 +1323,19 @@
         }
 
         /* Responsive */
+
+        /* Large tablets and small desktops */
         @media (max-width: 1200px) {
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .hero-name {
+                font-size: 4rem;
+            }
         }
 
+        /* Tablets */
         @media (max-width: 992px) {
             .header {
                 padding: 0 30px;
@@ -1340,17 +1351,35 @@
                 letter-spacing: 1px;
             }
 
+            .nav-item .index {
+                display: none;
+            }
+
             .header-status {
                 display: none;
             }
 
             .hero-name {
-                font-size: 3.5rem;
-                letter-spacing: 6px;
+                font-size: 3.2rem;
+                letter-spacing: 5px;
+            }
+
+            .hero-tag {
+                font-size: 0.7rem;
+                letter-spacing: 8px;
+            }
+
+            .hero-title {
+                font-size: 1rem;
+                letter-spacing: 5px;
             }
 
             .section {
                 padding: 100px 50px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
             }
 
             .about-grid {
@@ -1358,8 +1387,21 @@
                 gap: 50px;
             }
 
+            .about-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 50px;
+            }
+
+            .timeline-item {
+                padding: 30px;
             }
 
             .footer {
@@ -1369,9 +1411,20 @@
             }
         }
 
+        /* Mobile */
         @media (max-width: 768px) {
             .header {
-                padding: 0 20px;
+                padding: 0 15px;
+                height: 60px;
+            }
+
+            .header-logo-icon {
+                font-size: 1.2rem;
+            }
+
+            .header-logo-text {
+                font-size: 0.55rem;
+                letter-spacing: 3px;
             }
 
             .menu-toggle {
@@ -1385,13 +1438,16 @@
                 width: 100%;
                 flex-direction: column;
                 background: rgba(5, 5, 5, 0.98);
-                padding: 20px;
+                backdrop-filter: blur(20px);
+                padding: 15px;
                 gap: 5px;
                 border-bottom: 2px solid var(--nfs-orange);
                 transform: translateY(-100%);
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.4s ease;
+                max-height: calc(100vh - 60px);
+                overflow-y: auto;
             }
 
             .nav-menu.active {
@@ -1401,75 +1457,435 @@
             }
 
             .nav-item a {
-                padding: 15px 20px;
+                padding: 14px 18px;
                 justify-content: flex-start;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                min-height: 100vh;
+                height: auto;
+                padding-top: 80px;
+                padding-bottom: 80px;
             }
 
             .hero-name {
-                font-size: 2.2rem;
-                letter-spacing: 4px;
+                font-size: 2rem;
+                letter-spacing: 3px;
             }
 
             .hero-tag {
-                font-size: 0.6rem;
-                letter-spacing: 6px;
+                font-size: 0.55rem;
+                letter-spacing: 5px;
             }
 
             .hero-title {
-                font-size: 0.9rem;
-                letter-spacing: 4px;
+                font-size: 0.8rem;
+                letter-spacing: 3px;
+            }
+
+            .hero-cta {
+                padding: 12px 35px;
+                font-size: 0.65rem;
+                letter-spacing: 3px;
+            }
+
+            .hero-scroll-indicator {
+                bottom: 25px;
+            }
+
+            .scroll-text {
+                font-size: 0.5rem;
+            }
+
+            .scroll-line {
+                height: 35px;
             }
 
             .section {
-                padding: 80px 25px;
+                padding: 70px 20px;
+            }
+
+            .section-tag {
+                font-size: 0.55rem;
+                letter-spacing: 4px;
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                letter-spacing: 3px;
+            }
+
+            .section-title::after {
+                width: 50px;
+                height: 2px;
+            }
+
+            .about-image-frame {
+                aspect-ratio: 1/1;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+
+            .stat-item {
+                padding: 20px 10px;
+            }
+
+            .stat-number {
+                font-size: 1.6rem;
+            }
+
+            .stat-label {
+                font-size: 0.65rem;
+                letter-spacing: 1px;
             }
 
             .skills-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
 
-            .about-stats {
+            .skill-category {
+                padding: 25px;
+            }
+
+            .skill-category-icon {
+                font-size: 0.6rem;
+                letter-spacing: 3px;
+                margin-bottom: 15px;
+                padding-bottom: 12px;
+            }
+
+            .skill-item {
+                padding: 10px 0;
+                font-size: 0.95rem;
+            }
+
+            .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .project-card {
+                margin: 0 -5px;
+            }
+
+            .project-image {
+                height: 160px;
+            }
+
+            .project-image-text {
+                font-size: 1.6rem;
+            }
+
+            .project-number {
+                font-size: 2.5rem;
+                top: 15px;
+                right: 15px;
+            }
+
+            .project-content {
+                padding: 25px;
+            }
+
+            .project-tag {
+                font-size: 0.55rem;
+                letter-spacing: 2px;
+            }
+
+            .project-title {
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+
+            .project-desc {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .project-tech {
+                gap: 8px;
+            }
+
+            .tech-tag {
+                font-size: 0.6rem;
+                padding: 5px 10px;
+            }
+
+            .project-link {
+                font-size: 0.55rem;
+                padding: 7px 15px;
             }
 
             .timeline {
-                padding-left: 40px;
+                padding-left: 35px;
+            }
+
+            .timeline::before {
+                width: 1px;
+            }
+
+            .timeline-item {
+                padding: 22px;
+                margin-bottom: 40px;
             }
 
             .timeline-item::before {
-                left: -48px;
+                left: -43px;
+                width: 10px;
+                height: 10px;
             }
 
             .timeline-item::after {
-                left: -26px;
-                width: 22px;
+                left: -23px;
+                width: 18px;
+            }
+
+            .timeline-date {
+                font-size: 0.6rem;
+                letter-spacing: 2px;
+            }
+
+            .timeline-title {
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+
+            .timeline-company {
+                font-size: 0.85rem;
+            }
+
+            .timeline-desc {
+                font-size: 0.9rem;
+                line-height: 1.6;
             }
 
             .contact-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                letter-spacing: 4px;
+            }
+
+            .contact-subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 1px;
             }
 
             .contact-links {
                 flex-direction: column;
-                align-items: center;
+                gap: 15px;
             }
 
             .contact-link {
                 width: 100%;
-                max-width: 280px;
+                max-width: 300px;
                 justify-content: center;
+                padding: 14px 25px;
+                font-size: 0.75rem;
+                letter-spacing: 1.5px;
+            }
+
+            .contact-email {
+                margin-top: 40px;
+                padding-top: 40px;
+            }
+
+            .contact-email a {
+                font-size: 0.85rem;
+                letter-spacing: 3px;
+            }
+
+            .footer {
+                padding: 30px 20px;
+            }
+
+            .footer-text {
+                font-size: 0.6rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .footer-links a {
+                font-size: 0.6rem;
             }
 
             .back-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+
+            /* Loading screen mobile */
+            .loading-text {
                 font-size: 1rem;
+                letter-spacing: 8px;
+            }
+
+            .loading-bar {
+                width: 160px;
+            }
+
+            /* Reduce animations on mobile for performance */
+            .particle {
+                display: none;
+            }
+
+            .grain-overlay {
+                opacity: 0.02;
+            }
+
+            .scanlines {
+                opacity: 0.2;
+            }
+        }
+
+        /* Small mobile */
+        @media (max-width: 480px) {
+            .header-logo-text {
+                display: none;
+            }
+
+            .hero-name {
+                font-size: 1.7rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-tag {
+                font-size: 0.5rem;
+                letter-spacing: 4px;
+            }
+
+            .hero-title {
+                font-size: 0.7rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-cta {
+                padding: 10px 28px;
+                font-size: 0.6rem;
+                letter-spacing: 2px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .stat-item {
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .stat-number {
+                font-size: 1.4rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+            }
+
+            .project-image {
+                height: 140px;
+            }
+
+            .contact-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .project-card:hover {
+                transform: none;
+            }
+
+            .skill-category:hover {
+                transform: none;
+            }
+
+            .timeline-item:hover {
+                transform: none;
+            }
+
+            .contact-link:hover {
+                transform: none;
+            }
+
+            /* Better touch targets */
+            .nav-item a {
+                min-height: 44px;
+            }
+
+            .contact-link {
+                min-height: 50px;
+            }
+
+            .back-to-top {
+                min-width: 44px;
+                min-height: 44px;
+            }
+        }
+
+        /* Landscape mode on mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 100px 20px 60px;
+            }
+
+            .hero-scroll-indicator {
+                display: none;
+            }
+        }
+
+        /* Safe area for notched devices */
+        @supports (padding: env(safe-area-inset-top)) {
+            .header {
+                padding-left: calc(15px + env(safe-area-inset-left));
+                padding-right: calc(15px + env(safe-area-inset-right));
+            }
+
+            .footer {
+                padding-left: calc(20px + env(safe-area-inset-left));
+                padding-right: calc(20px + env(safe-area-inset-right));
+                padding-bottom: calc(30px + env(safe-area-inset-bottom));
+            }
+
+            .back-to-top {
+                bottom: calc(15px + env(safe-area-inset-bottom));
+                right: calc(15px + env(safe-area-inset-right));
+            }
+        }
+
+        /* High refresh rate screens */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .particle,
+            .grain-overlay,
+            .scanlines {
+                display: none;
             }
         }
     </style>
@@ -1839,9 +2255,14 @@
             }, 1500);
         });
 
-        // Create particles
+        // Detect mobile device
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        // Create particles (fewer on mobile)
         const particlesContainer = document.getElementById('particles');
-        for (let i = 0; i < 30; i++) {
+        const particleCount = isMobile ? 10 : 30;
+        for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.style.left = Math.random() * 100 + '%';
@@ -1854,8 +2275,9 @@
         const header = document.getElementById('header');
         const backToTop = document.getElementById('backToTop');
         const scrollProgress = document.getElementById('scrollProgress');
+        let ticking = false;
 
-        window.addEventListener('scroll', () => {
+        function updateScroll() {
             const scrolled = window.pageYOffset;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrollPercent = (scrolled / docHeight) * 100;
@@ -1877,19 +2299,30 @@
             // Scroll progress bar
             scrollProgress.style.width = scrollPercent + '%';
 
-            // Parallax for hero grid
-            const grid = document.querySelector('.hero-grid');
-            if (grid && scrolled < window.innerHeight) {
-                grid.style.transform = `translateY(${scrolled * 0.4}px)`;
+            // Parallax for hero grid (skip on mobile for performance)
+            if (!isMobile) {
+                const grid = document.querySelector('.hero-grid');
+                if (grid && scrolled < window.innerHeight) {
+                    grid.style.transform = `translateY(${scrolled * 0.4}px)`;
+                }
+
+                // Parallax for hero content
+                const heroContent = document.querySelector('.hero-content');
+                if (heroContent && scrolled < window.innerHeight) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
+                    heroContent.style.opacity = 1 - (scrolled / window.innerHeight);
+                }
             }
 
-            // Parallax for hero content
-            const heroContent = document.querySelector('.hero-content');
-            if (heroContent && scrolled < window.innerHeight) {
-                heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
-                heroContent.style.opacity = 1 - (scrolled / window.innerHeight);
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateScroll);
+                ticking = true;
             }
-        });
+        }, { passive: true });
 
         // Back to top click
         backToTop.addEventListener('click', () => {
@@ -1900,7 +2333,7 @@
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-item a');
 
-        window.addEventListener('scroll', () => {
+        function updateActiveNav() {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - 200;
@@ -1915,7 +2348,9 @@
                     link.classList.add('active');
                 }
             });
-        });
+        }
+
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
 
         // Smooth scroll for nav links
         navLinks.forEach(link => {
@@ -1944,19 +2379,35 @@
             navMenu.classList.toggle('active');
         });
 
-        // Glitch effect on hover for hero name
-        const heroName = document.querySelector('.hero-name');
-        heroName.addEventListener('mouseenter', () => {
-            heroName.style.animation = 'none';
-            setTimeout(() => {
-                heroName.style.animation = 'glitch-text 0.3s ease 3, title-glow 2s ease-in-out infinite alternate';
-            }, 10);
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Glitch effect on hover for hero name (only on non-touch devices)
+        const heroName = document.querySelector('.hero-name');
+        if (!isTouch) {
+            heroName.addEventListener('mouseenter', () => {
+                heroName.style.animation = 'none';
+                setTimeout(() => {
+                    heroName.style.animation = 'glitch-text 0.3s ease 3, title-glow 2s ease-in-out infinite alternate';
+                }, 10);
+            });
+        }
 
         // Scroll reveal animation
         const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -80px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const revealObserver = new IntersectionObserver((entries) => {
@@ -2001,48 +2452,64 @@
             timelineObserver.observe(timeline);
         }
 
-        // Random glitch effect
-        setInterval(() => {
-            if (Math.random() > 0.93) {
-                document.body.style.transform = `translate(${Math.random() * 3 - 1.5}px, ${Math.random() * 3 - 1.5}px)`;
-                setTimeout(() => {
-                    document.body.style.transform = 'translate(0, 0)';
-                }, 50);
-            }
-        }, 100);
+        // Random glitch effect (skip on mobile)
+        if (!isMobile) {
+            setInterval(() => {
+                if (Math.random() > 0.93) {
+                    document.body.style.transform = `translate(${Math.random() * 3 - 1.5}px, ${Math.random() * 3 - 1.5}px)`;
+                    setTimeout(() => {
+                        document.body.style.transform = 'translate(0, 0)';
+                    }, 50);
+                }
+            }, 100);
+        }
 
-        // Tilt effect on project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
+        // Tilt effect on project cards (skip on touch devices)
+        if (!isTouch) {
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+                });
             });
 
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-            });
-        });
+            // Magnetic effect on buttons
+            document.querySelectorAll('.hero-cta, .contact-link').forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
 
-        // Magnetic effect on buttons
-        document.querySelectorAll('.hero-cta, .contact-link').forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+                });
 
-                btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0, 0)';
+                });
             });
+        }
 
-            btn.addEventListener('mouseleave', () => {
-                btn.style.transform = 'translate(0, 0)';
-            });
+        // Handle viewport resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                // Close mobile menu on resize to desktop
+                if (window.innerWidth > 768) {
+                    navMenu.classList.remove('active');
+                }
+            }, 250);
         });
     </script>
 </body>
